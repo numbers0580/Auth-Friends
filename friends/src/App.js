@@ -36,13 +36,11 @@ function App() {
           </nav>
         </header>
         <Switch>
-          <Route exact path='/' component={Home}></Route>
+          <Route exact path='/' component={Home} />
           <Route path='/login'>
             <Login />
           </Route>
-          <PrivateRoute path='/friends'>
-            <Friends />
-          </PrivateRoute>
+          <PrivateRoute path='/friends' component={Friends} />
         </Switch>
       </BrowserRouter>
     </div>
