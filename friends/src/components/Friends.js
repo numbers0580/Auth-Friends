@@ -41,10 +41,11 @@ const Friends = () => {
                 justifyContent: 'space-between'
             },
             formPage: {
-                width: '45%'
+                width: '400px'
             },
             theForm: {
-                padding: '0 5%',
+                marginTop: '10px',
+                padding: '0 20%',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'start'
@@ -56,10 +57,9 @@ const Friends = () => {
                 justifyContent: 'space-between'
             },
             container: {
-                width: '45%',
+                width: '100%',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
+                flexWrap: 'wrap'
             },
             h2: {
                 margin: '10px',
@@ -120,17 +120,19 @@ const Friends = () => {
                     </div>
                 </form>
             </div>
-            <div style={listStyle().container}>
+            <div style={{width: '600px'}}>
                 <h2 style={listStyle().h2}>My F.R.I.E.N.D.S</h2>
-                {friendsList.map(currentFriend => {
-                    return (
-                        <div style={listStyle().div} key={currentFriend.id}>
-                            <h3 style={listStyle().h3}>{currentFriend.name}</h3>
-                            <p style={listStyle().p1}>{currentFriend.age} years old</p>
-                            <p style={listStyle().p2}>{currentFriend.email}</p>
-                        </div>
-                    )
-                })}
+                <div style={listStyle().container}>
+                    {friendsList.map(currentFriend => {
+                        return (
+                            <div style={listStyle().div} key={currentFriend.id}>
+                                <h3 style={listStyle().h3}>{currentFriend.name}</h3>
+                                <p style={listStyle().p1}>{currentFriend.age} years old</p>
+                                <p style={listStyle().p2}>{currentFriend.email}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
