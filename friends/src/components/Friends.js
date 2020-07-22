@@ -24,11 +24,13 @@ const Friends = () => {
             .post('/api/friends', friendValue)
             .then(friendPosting => {
                 console.log('Testing friend being Posted with Auth', friendPosting.data);
-                setFriendValue(friendPosting.data);
+                setList(friendPosting.data);
             })
             .catch(fPostError => {
                 console.log('Error posting new Friend to API');
             })
+
+        setFriendValue(blankFriends);
     };
 
     const listStyle = () => {
